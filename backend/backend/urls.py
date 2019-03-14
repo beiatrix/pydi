@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from pydi import views
+
+# The router class allows us to make the following queries:
+
+# /posts/ - This returns a list of all the Post items (Create and Read operations can be done here).
+# /posts/id - This returns a single Post item using the id primary key (Update and Delete operations can be done here).
+
+router = routers.DefaultRouter()
+router.register(r'todos', views.PostView, 'post')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), path('api/', include(router.urls))
 ]
