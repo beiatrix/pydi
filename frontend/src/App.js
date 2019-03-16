@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Posts} from './components'
+import {Posts, AddPost} from './components'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>hello world</h1>
-          <Posts />
+          <h1>pydi</h1>
+          <p>digital diary app created by beia</p>
         </header>
+        <AddPost />
+        <Posts />
       </div>
     );
   }
