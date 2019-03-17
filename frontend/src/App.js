@@ -6,9 +6,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header>
           <h1>pydi</h1>
-          <p>digital diary app created by beia</p>
+          <p>digital diary app</p>
         </header>
         <AddPost />
         <Posts />
